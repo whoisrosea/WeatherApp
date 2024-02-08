@@ -1,16 +1,22 @@
+@import "../styles/styles.scss";
+
 .DateList {
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.152);
-  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  @include mainEl;
 }
 
 .DateList__item {
   display: flex;
   justify-content: space-between;
-  margin: 5px;
+  margin: 10px;
+  padding: 0 15px;
   border-radius: 10px;
+
   &:hover {
-    background-color: #9292921f;
+    background-color: $hoverColor;
     cursor: pointer;
   }
 }

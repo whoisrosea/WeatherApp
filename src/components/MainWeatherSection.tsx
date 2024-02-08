@@ -2,8 +2,8 @@ import React, { FC, useEffect, useState } from "react";
 import TodayWeather from "./TodayWeather";
 import WeekWeather from "./WeekWeather";
 import DateList from "./DateList";
-import { ILocation, IWeatherData } from "../Types/types";
-import "./MainWeatherSection.scss"
+import { ILocation, IWeatherData } from "../types/types";
+import "./MainWeatherSection.scss";
 
 interface MainWeatherSectionProps {
   location: ILocation;
@@ -19,13 +19,13 @@ export const MainWeatherSection: FC<MainWeatherSectionProps> = ({
 
   const [weather, setWeather] = useState<IWeatherData[]>([]);
   const [day, setDay] = useState<number>(0);
-  const [time, setTime] = useState<number>(0)
+  const [time, setTime] = useState<number>(0);
 
   function groupByDays(items: any) {
     const groups = new Map();
     items.forEach((item: any) => {
       const date = new Date(item.dt * 1000);
-      const dateString = date.toISOString().split("T")[0]; 
+      const dateString = date.toISOString().split("T")[0];
       if (!groups.has(dateString)) {
         groups.set(dateString, []);
       }
@@ -43,7 +43,7 @@ export const MainWeatherSection: FC<MainWeatherSectionProps> = ({
         return response.json();
       })
       .then((weatherData) => {
-        setWeather(groupByDays(weatherData.list)); 
+        setWeather(groupByDays(weatherData.list));
       })
       .catch((error) =>
         console.error(

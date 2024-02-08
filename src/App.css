@@ -1,66 +1,18 @@
 
 .App{
-  width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-column-gap: 20px;
+  grid-gap: 20px;
   border-radius: 30px ;
   color: white;
 }
-/* .css-kf85qm-JoyInput-root{
+
+
+.css-kf85qm-JoyInput-root{
   background-color: rgba(255, 255, 255, 0.324) !important;
   border: none !important;
 }
 input{
   color: white !important;
-} */
+} 
 
-.AppBlock__item{
-  border-radius: 30px ;
-  padding: 8%;
-  background-color: rgba(255, 255, 255, 0.152);
-}
-
-.AppBlock__item-left-text {
-  max-height: 650px; /* Пример фиксированной высоты */
-  overflow: auto; /* Автоматический скроллбар при необходимости */
-}
-
-.AppBlock__item-right-downmenu{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.152);
-  border-radius: 30px ;
-  margin-top: 20px;
-}
-
-
-
-
-
-
-.AppBlock__item-right-weeklist-item{
-  display: flex;
-  justify-content: space-between;  
-  padding: 0 10px;
-}
-
-.AppBlock__item-right-weeklist-item{
-
-}
-
-.AppBlock__item-right-maininfo{
-   background-color: rgba(255, 255, 255, 0.152);
-   border-radius: 30px ;
-}
-
-.AppBlock__item-right-weeklist{
-
-
-}
-
-.AppBlock__item-right-weeklist :hover{
-
-}

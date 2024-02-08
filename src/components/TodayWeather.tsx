@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
-import { ILocation, IWeatherData } from "../Types/types";
-import "./TodayWeather.scss"
+import { ILocation, IWeatherData } from "../types/types";
+import "./TodayWeather.scss";
 
 interface TodayWeatherProps {
   location: ILocation;
@@ -20,6 +20,7 @@ const TodayWeather: FC<TodayWeatherProps> = ({
   baseUrl,
 }) => {
   const [gradient, setGradient] = useState<string>("");
+  const [value, setValue] = useState<string>(" °C");
 
   useEffect(() => {
     const getGradientForTime = (hour: number) => {
@@ -48,10 +49,8 @@ const TodayWeather: FC<TodayWeatherProps> = ({
   }, [weather, day, time]);
 
   useEffect(() => {
-    // Применяем градиент к фону body
     document.body.style.background = gradient;
 
-    // Очищаем эффект, возвращая предыдущий стиль при размонтировании компонента
     return () => {
       document.body.style.background = "";
     };
@@ -63,8 +62,6 @@ const TodayWeather: FC<TodayWeatherProps> = ({
         {location.yourLocation ? (
           <>
             <h2>Your Location</h2>
-            <p>{location.lat}</p>
-            <p> {location.lng}</p>
           </>
         ) : (
           <>
@@ -73,21 +70,41 @@ const TodayWeather: FC<TodayWeatherProps> = ({
         )}
       </p>
       <p>{weather[day]?.items[time]?.dt_txt}</p>
-      <h1>{weather[day]?.items[time]?.main.temp}</h1>
-      <p>feels like: {weather[day]?.items[time]?.main.feels_like}</p>
+      <h1>
+        {Math.round(weather[day]?.items[time]?.main.temp)}
+        {value}
+      </h1>
+      <p>
+        feels like: {Math.round(weather[day]?.items[time]?.main.feels_like)}
+        {value}
+      </p>
       <img
         src={`${baseUrl}${weather[day]?.items[time]?.weather[0].icon}${suffix}`}
         alt=""
       />
       <div className="TodayWeather__item-info">
         <div>
-          <p>min temperature: {weather[day]?.items[time]?.main.temp_min}</p>
-          <p>max temperature: {weather[day]?.items[time]?.main.temp_max}</p>
-          <p>pressure: {weather[day]?.items[time]?.main.pressure}</p>
+          <p>
+            <b>min temperature:</b> {Math.round(weather[day]?.items[time]?.main.temp_min)}
+            {value}
+          </p>
+          <p>
+            <b>max temperature:</b> {Math.round(weather[day]?.items[time]?.main.temp_max)}
+            {value}
+          </p>
+          <p>
+            <b>pressure:</b> {weather[day]?.items[time]?.main.pressure} hPa
+          </p>
         </div>
         <div>
-          <p>wind deg:{weather[day]?.items[time]?.wind.deg}</p>
-          <p>wind speed:{weather[day]?.items[time]?.wind.speed}</p>
+          <p>
+            <b>wind deg:</b>
+            {weather[day]?.items[time]?.wind.deg}
+          </p>
+          <p>
+            <b>wind speed:</b>
+            {weather[day]?.items[time]?.wind.speed}
+          </p>
         </div>
       </div>
     </div>

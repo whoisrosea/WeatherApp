@@ -1,25 +1,25 @@
-import React, { FC } from 'react'
-import { IWeatherData } from '../Types/types';
-import "./DateList.scss"
+import React, { FC } from "react";
+import { IWeatherData } from "../types/types";
+import "./DateList.scss";
 
-interface DateListProps{
-  weather: IWeatherData[]
-  setDay: React.Dispatch<React.SetStateAction<number>>
+interface DateListProps {
+  weather: IWeatherData[];
+  setDay: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const DateList: FC<DateListProps> = ({weather, setDay}) => {
+const DateList: FC<DateListProps> = ({ weather, setDay }) => {
   return (
     <div className="DateList">
       {weather.map((item, index) => (
-        <div
-          onClick={() => setDay(index)}
-          className="DateList__item"
-        >
+        <div onClick={() => setDay(index)} className="DateList__item">
           <h4>{item.date}</h4>
           <h4 key={index}>
-            T:{" "}
-            {item.items.reduce((sum, cur) => sum + cur.main.temp, 0) /
-              item.items.length}
+            
+            {Math.round(
+              item.items.reduce((sum, cur) => sum + cur.main.temp, 0) /
+                item.items.length
+            )}
+            °C
           </h4>
         </div>
       ))}
@@ -27,4 +27,4 @@ const DateList: FC<DateListProps> = ({weather, setDay}) => {
   );
 };
 
-export default DateList
+export default DateList;

@@ -1,10 +1,8 @@
 import { Input } from "@mui/joy";
 import React, { FC, useEffect, useState } from "react";
 import countryData from "../country-data.json";
-import { ILocation } from "../Types/types";
-import "./LocationSearch.scss"
-
-
+import { ILocation } from "../types/types";
+import "./LocationSearch.scss";
 
 interface LocationSearchProps {
   handleChoice: (
@@ -24,7 +22,7 @@ const LocationSearch: FC<LocationSearchProps> = ({ handleChoice }) => {
   };
   useEffect(() => {
     const searchQuery = userInput.toLowerCase();
-    
+
     setFilteredData(
       countryData.filter((el) => {
         return (
@@ -50,12 +48,12 @@ const LocationSearch: FC<LocationSearchProps> = ({ handleChoice }) => {
       />
       <div className="LocationSearch__item">
         {filteredData.slice(0, 11).map((el, index) => (
-          <h5
+          <h4
             key={index}
             onClick={() => handleChoice(el.country, el.city, el.lat, el.lng)}
           >
             {el.country}, {el.city},
-          </h5>
+          </h4>
         ))}
       </div>
     </div>

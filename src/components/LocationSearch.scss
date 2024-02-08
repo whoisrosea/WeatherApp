@@ -1,10 +1,16 @@
-.LocationSearch {
-  border-radius: 30px;
-  padding: 8%;
-  background-color: rgba(255, 255, 255, 0.152);
-}
+@import "../styles/styles.scss";
 
-.LocationSearch__item {
-  max-height: 650px;
-  overflow: auto;
+.LocationSearch {
+  @include mainEl;
+  padding: 20px;
+}
+.LocationSearch__item{
+  h4{
+    padding:6px;
+    margin: 8px 0;
+    border-radius: 10px;
+    &:hover{
+      background-color: $hoverColor;
+    }
+  }
 }

@@ -1,14 +1,22 @@
-.WeekWeather {
-  border-radius: 30px;
-   background-color: rgba(255, 255, 255, 0.152);
-   margin-top: 20px;
+@import "../styles/styles.scss";
 
+.WeekWeather {
+  width: 1150px;
+  @include mainEl;
+  display: flex;
+  justify-content: space-around;
 }
 
 .WeekWeather__item {
+  margin: 20px;
+  border-radius: 10px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   &:hover {
-    background-color: #9292921f;
+    background-color: $hoverColor;
     cursor: pointer;
   }
 }

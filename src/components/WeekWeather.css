@@ -1,10 +1,20 @@
 .WeekWeather {
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.152);
-  margin-top: 20px;
+  width: 1150px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
+.WeekWeather__item {
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .WeekWeather__item:hover {
-  background-color: rgba(146, 146, 146, 0.1215686275);
+  background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }/*# sourceMappingURL=WeekWeather.css.map */

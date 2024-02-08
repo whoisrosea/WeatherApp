@@ -1,10 +1,14 @@
 .LocationSearch {
-  border-radius: 30px;
-  padding: 8%;
-  background-color: rgba(255, 255, 255, 0.152);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 20px;
 }
 
-.LocationSearch__item {
-  max-height: 650px;
-  overflow: auto;
+.LocationSearch__item h4 {
+  padding: 6px;
+  margin: 8px 0;
+  border-radius: 10px;
+}
+.LocationSearch__item h4:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }/*# sourceMappingURL=LocationSearch.css.map */

@@ -1,0 +1,7 @@
+$backgroundColor: rgba(255, 255, 255, 0.15);
+$hoverColor: rgba(255, 255, 255, 0.3);
+
+@mixin mainEl {
+  background-color: $backgroundColor;
+  border-radius: 20px;
+}
