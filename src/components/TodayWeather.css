@@ -1,0 +1,9 @@
+.TodayWeather {
+  background-color: rgba(255, 255, 255, 0.152);
+  border-radius: 30px;
+}
+
+.TodayWeather__item-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}/*# sourceMappingURL=TodayWeather.css.map */

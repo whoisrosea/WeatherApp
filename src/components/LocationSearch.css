@@ -1,0 +1,10 @@
+.LocationSearch {
+  border-radius: 30px;
+  padding: 8%;
+  background-color: rgba(255, 255, 255, 0.152);
+}
+
+.LocationSearch__item {
+  max-height: 650px;
+  overflow: auto;
+}/*# sourceMappingURL=LocationSearch.css.map */
